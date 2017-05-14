@@ -8,7 +8,7 @@
     <style type="text/css">
       #mapDiv {
         width: 1200px;
-        height: 800px;
+        height: 500px;
       }
     </style>
 
@@ -17,7 +17,7 @@
       function initMap() {
         google.maps.visualRefresh = true;
         var mapOptions = {
-          zoom: 1,
+          zoom: 5,
           mapTypeControlOptions: {mapTypeIds:
                [google.maps.MapTypeId.ROADMAP]}
         };
@@ -30,7 +30,7 @@
         
       }
       function zoomToIstanbul() {
-        var istanbul = new google.maps.LatLng(41.0579, 29.0340);
+        var istanbul = new google.maps.LatLng(0.0236, 37.9062);
         map.setCenter(istanbul);
       }
       function zoomToStreet() {
@@ -87,7 +87,7 @@
   </head>
   <body>
     <h1>My First Map</h1>
-    <input id="btnZoomToIst" type="button" value="Zoom To Istanbul" />
+    <input id="btnZoomToIst" type="button" value="Zoom To Kenya" />
     <input id="btnZoomToStr" type="button" value="Zoom To Street Level" />
     <input id="btnDisableDrag" type="button" value="Disable Drag" />
     <input id="btnMaxZoom" type="button" value="Set Max Zoom to 12" />

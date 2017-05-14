@@ -13,8 +13,15 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'activerecord-postgis-adapter'
+gem 'rgeo'
 gem 'rgeo-geojson'
+gem 'rgeo-shapefile'
+gem 'baby_squeel'
 gem 'pry-rails', '~> 0.3.4'
+gem 'sidekiq'
+gem 'sinatra', require: false
+ 
+gem 'slim'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13.0'

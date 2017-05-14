@@ -23,7 +23,7 @@
         map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
         
         //Load GeoJSON
-        map.data.loadGeoJson("<%= counties_path format: :json %>");
+        map.data.loadGeoJson("<%= constituencies_path format: :json -%>");
         
         map.setZoom(7);
         var gabon = new google.maps.LatLng(0.0236, 37.9062);

@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509122804) do
+ActiveRecord::Schema.define(version: 20170512141233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
+
+  create_table "constituencies", force: :cascade do |t|
+    t.string "name"
+    t.integer "constituency_code"
+    t.geometry "geom", limit: {:srid=>4326, :type=>"multi_polygon"}
+    t.index ["geom"], name: "index_constituencies_on_geom", using: :gist
+  end
 
   create_table "counties", force: :cascade do |t|
     t.string "name"
@@ -28,6 +35,11 @@ ActiveRecord::Schema.define(version: 20170509122804) do
     t.string "iso_code"
     t.geometry "geom", limit: {:srid=>4326, :type=>"multi_polygon"}
     t.index ["geom"], name: "index_countries_on_geom", using: :gist
+  end
+
+  create_table "issues", force: :cascade do |t|
+    t.geometry "coords", limit: {:srid=>4326, :type=>"st_point"}
+    t.index ["coords"], name: "index_issues_on_coords", using: :gist
   end
 
 end
