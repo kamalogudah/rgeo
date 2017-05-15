@@ -1,7 +1,7 @@
 class CountiesController < ApplicationController
     def index
+      #LoadCountiesDataWorker.perform_async
       @counties = County.all
-
       respond_to do |format|
         format.json do
           feature_collection = County.to_feature_collection @counties
@@ -9,7 +9,8 @@ class CountiesController < ApplicationController
         end
 
         format.html
-      end
-  end
+      end 
+      
+    end
 
 end

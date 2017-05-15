@@ -20,7 +20,6 @@ gem 'baby_squeel'
 gem 'pry-rails', '~> 0.3.4'
 gem 'sidekiq'
 gem 'sinatra', require: false
- 
 gem 'slim'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
